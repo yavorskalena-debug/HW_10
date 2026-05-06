@@ -1,0 +1,33 @@
+    1  cd ~/Desktop/Git_hm
+    2  git clone https://github.com/yavorskalena-debug/HW_10.git
+    3  cd HW_10
+    4  ls -la
+    5  touch text_ignore.txt
+    6  echo "text_ignore.txt" >> .gitignore
+    7  cat .gitignore
+    8  sed -i '' 's/TestResults.xmltext_ignore.txt/TestResults.xml\ntext_ignore.txt/' .gitignore
+    9  cat .gitignore
+   10  git status
+   11  git add .
+   12  git commit -m "Add text_ignore.txt to .gitignore"
+   13  git push origin main
+   14  touch main_test.txt
+   15  git add .
+   16  git commit -m "Add main_test.txt"
+   17  git push origin main
+   18  git checkout -b develop
+   19  touch develop_test.txt
+   20  git add .
+   21  git commit -m "Add develop_test.txt"
+   22  echo "just a small change" >> develop_test.txt
+   23  git status
+   24  git add .
+   25  git commit -m "Update develop_test.txt"
+   26  git push origin develop
+   27  git checkout main
+   28  git merge develop
+   29  git log
+   30  git push origin main
+   31  history 0 > command_list.csv
+   32  cat command_list.csv
+   33  history > command_list.csv
